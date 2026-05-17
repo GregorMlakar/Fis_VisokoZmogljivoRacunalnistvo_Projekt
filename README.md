@@ -38,9 +38,7 @@ mpiexec -n 4 MpiVideoProc.exe mp4_example.mp4
 2. Namestitev: msmpisdk.msi
 3. Namestitev: msmpisetup.exe
 5. Extrakcija: opencv-4.7.0-windows.exe na C:
-6. Spremenljivke okolja:
-  7. C:\opencv\build\x64\vc16\lib
-  8. C:\opencv\build\x64\vc16\bin
-9. Namestitev: DeployCpp.msi
+6. Spremenljivke okolja: "C:\opencv\build\x64\vc16\lib" in "C:\opencv\build\x64\vc16\bin"
+7. Namestitev: DeployCpp.msi
 
 
