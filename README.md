@@ -26,7 +26,7 @@ Primer delitve pri 4 procesih:
 - rank 2 obdela tretji del sličic,
 - rank 3 obdela četrti del sličic.
 
-Za razdelitev podatkov je uporabljena funkcija "MPI_Scatterv2, za zbiranje rezultatov pa "MPI_Gatherv2.
+Za razdelitev podatkov je uporabljena funkcija "MPI_Scatterv", za zbiranje rezultatov pa "MPI_Gatherv".
 
 ## Zagon programa
 
