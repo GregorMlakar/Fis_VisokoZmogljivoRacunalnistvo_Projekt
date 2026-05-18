@@ -10,6 +10,8 @@ Program zaženemo 3x za vsako število procesov:
 -	mpiexec -n 8 MpiVideoProc.exe mp4_example.mp4
 
 Procesor:
+</br>
+<img width="313" height="245" alt="image" src="./Slike/Karp-flattova metrika.png" />
 
 Pomnilnik:
 
