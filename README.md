@@ -41,4 +41,5 @@ mpiexec -n 4 MpiVideoProc.exe mp4_example.mp4
 6. Spremenljivke okolja: "C:\opencv\build\x64\vc16\lib" in "C:\opencv\build\x64\vc16\bin"
 7. Namestitev: DeployCpp.msi
 
-
+## Analiza
+[Podrobna analiza](./Analiza.md)
