@@ -26,7 +26,18 @@ Primer delitve pri 4 procesih:
 - rank 2 obdela tretji del sličic,
 - rank 3 obdela četrti del sličic.
 
-Za razdelitev podatkov je uporabljena funkcija "MPI_Scatterv", za zbiranje rezultatov pa "MPI_Gatherv".
+## Izvorna koda
+[Cpp](./IzvornaKoda)
+</br>
+Navodila za konfiguracijo OpenCV v Visual Studio: [OpenCV](https://www.youtube.com/watch?v=YUjamcyuKT4)
+</br>
+Navodila za konfiguracijo MS-MPI v Visual Studio: [MS-MPI](https://www.youtube.com/watch?v=L-xJreZ55aU)
+</br>
+Visual studio 2022 Community: [VS2022](https://visualstudio.microsoft.com/vs/older-downloads/)
+
+## Analiza
+### [Podrobna analiza](./Analiza.md)
+### Word: [Poročilo/Analiza](./Poročilo)
 
 ## Zagon programa
 
@@ -44,15 +55,3 @@ mpiexec -n 4 MpiVideoProc.exe mp4_example.mp4
 - C:\opencv\build\x64\vc16\lib
 8. Namestitev aplikacije DeployCpp.msi [Dependencies](./Dependencies/App) (predhodna extrakcija datotek)
 ### Podrobna navodila so v mapi: [Poročilo/Navodila za testiranje](./Poročilo)
-
-## Izvorna koda
-[Cpp](./IzvornaKoda)
-Navodila za konfiguracijo OpenCV v Visual Studio: [OpenCV](https://www.youtube.com/watch?v=YUjamcyuKT4)
-</br>
-Navodila za konfiguracijo MS-MPI v Visual Studio: [MS-MPI](https://www.youtube.com/watch?v=L-xJreZ55aU)
-</br>
-Visual studio 2022 Community: [VS2022](https://visualstudio.microsoft.com/vs/older-downloads/)
-
-## Analiza
-### [Podrobna analiza](./Analiza.md)
-### Word: [Poročilo/Analiza](./Poročilo)
