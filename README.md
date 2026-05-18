@@ -39,7 +39,9 @@ mpiexec -n 4 MpiVideoProc.exe mp4_example.mp4
 3. Namestitev: msmpisetup.exe
 4. Prenos OpenCV klnjižnice verzija 4.7.0 [OpenCV 4.7.0](https://opencv.org/releases/)
 6. Extrakcija: opencv-4.7.0-windows.exe na C:
-7. Spremenljivke okolja: "C:\opencv\build\x64\vc16\lib" in "C:\opencv\build\x64\vc16\bin"
+7. Spremenljivke okolja:
+- C:\opencv\build\x64\vc16\bin
+- C:\opencv\build\x64\vc16\lib
 8. Namestitev aplikacije DeployCpp.msi [Dependencies](./Dependencies/App) (predhodna extrakcija datotek)
 ### Podrobna navodila so v mapi: Poročilo/Navodila za testiranje
 
