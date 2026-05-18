@@ -43,7 +43,7 @@ mpiexec -n 4 MpiVideoProc.exe mp4_example.mp4
 - C:\opencv\build\x64\vc16\bin
 - C:\opencv\build\x64\vc16\lib
 8. Namestitev aplikacije DeployCpp.msi [Dependencies](./Dependencies/App) (predhodna extrakcija datotek)
-### Podrobna navodila so v mapi: Poročilo/Navodila za testiranje
+### Podrobna navodila so v mapi: [Poročilo](./Poročilo) Navodila za testiranje
 
 ## Izvorna koda
 [Cpp](./IzvornaKoda)
@@ -55,4 +55,4 @@ Visual studio 2022 Community: [VS2022](https://visualstudio.microsoft.com/vs/old
 
 ## Analiza
 [Podrobna analiza](./Analiza.md)
-### Word: Poročilo/Analiza
+### Word: [Poročilo](./Poročilo) Analiza
