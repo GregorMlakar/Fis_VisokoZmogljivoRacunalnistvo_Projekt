@@ -33,17 +33,18 @@ Za razdelitev podatkov je uporabljena funkcija "MPI_Scatterv", za zbiranje rezul
 mpiexec -n 4 MpiVideoProc.exe mp4_example.mp4
 
 ## Predpogoj za zagon
-### Relevantni namestitveni programi se nahajajo v mapi: [Dependencies](./Dependencies)
+### Namestitveni programi se nahajajo v mapi: [Dependencies](./Dependencies)
 1. Video datoteka se mora nahajati na namizju/desktopu
 2. Namestitev: msmpisdk.msi
 3. Namestitev: msmpisetup.exe
-5. Extrakcija: opencv-4.7.0-windows.exe na C:
-6. Spremenljivke okolja: "C:\opencv\build\x64\vc16\lib" in "C:\opencv\build\x64\vc16\bin"
-7. Namestitev: DeployCpp.msi
+4. Prenos OpenCV klnjižnice verzija 4.7.0 [OpenCV 4.7.0](https://opencv.org/releases/)
+6. Extrakcija: opencv-4.7.0-windows.exe na C:
+7. Spremenljivke okolja: "C:\opencv\build\x64\vc16\lib" in "C:\opencv\build\x64\vc16\bin"
+8. Namestitev aplikacije DeployCpp.msi [Dependencies](./Dependencies/App) (predhodna extrakcija datotek)
 ### Podrobna navodila so v mapi: Poročilo/Navodila za testiranje
 
 ## Izvorna koda
-[Cpp](./Izvorna koda/MpiVideoProc.cpp)
+[Cpp](./IzvornaKoda)
 Navodila za konfiguracijo OpenCV v Visual Studio: [OpenCV](https://www.youtube.com/watch?v=YUjamcyuKT4)
 </br>
 Navodila za konfiguracijo MS-MPI v Visual Studio: [MS-MPI](https://www.youtube.com/watch?v=L-xJreZ55aU)
