@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="MPI Video Sobel" id="SH7Z23B78_EwC_qjbciQ">
+    <mxGraphModel dx="1414" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=34;horizontal=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="Rank 0 - glavni proces" vertex="1">
+          <mxGeometry height="650" width="500" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-2" parent="VK7OkRAiDbiQK78nzlrD-1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="Začetek programa" vertex="1">
+          <mxGeometry height="45" width="150" x="170" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-3" parent="VK7OkRAiDbiQK78nzlrD-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="MPI_Init&amp;nbsp;&lt;div&gt;(&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;pridobi rank in size)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="145" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-4" parent="VK7OkRAiDbiQK78nzlrD-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="Odpri vhodni video&lt;div&gt;(preberi frame-e, širino, višino, FPS)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="280" x="105" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-5" parent="VK7OkRAiDbiQK78nzlrD-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="Frame-e pretvori v byte buffer&lt;div&gt;(velik skupni buffer vseh podatkov)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="280" x="105" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-6" parent="VK7OkRAiDbiQK78nzlrD-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="MPI_Bcast&lt;div&gt;&amp;nbsp;(pošlji meta podatke vsem procesom)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="280" x="105" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-7" parent="VK7OkRAiDbiQK78nzlrD-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="MPI_Scatterv&lt;div&gt;(razdeli frame-e med procese)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="280" x="105" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-8" parent="VK7OkRAiDbiQK78nzlrD-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="Rank 0 obdela tudi svoj del frame-ov&lt;div&gt;(GaussianBlur, sivinska slika, sobel operacija)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="280" x="105" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-9" edge="1" parent="VK7OkRAiDbiQK78nzlrD-1" source="VK7OkRAiDbiQK78nzlrD-2" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-10" edge="1" parent="VK7OkRAiDbiQK78nzlrD-1" source="VK7OkRAiDbiQK78nzlrD-3" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-11" edge="1" parent="VK7OkRAiDbiQK78nzlrD-1" source="VK7OkRAiDbiQK78nzlrD-4" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-12" edge="1" parent="VK7OkRAiDbiQK78nzlrD-1" source="VK7OkRAiDbiQK78nzlrD-5" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-13" edge="1" parent="VK7OkRAiDbiQK78nzlrD-1" source="VK7OkRAiDbiQK78nzlrD-6" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-14" edge="1" parent="VK7OkRAiDbiQK78nzlrD-1" source="VK7OkRAiDbiQK78nzlrD-7" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-15" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=34;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="Rank 1 ... N - delovni procesi" vertex="1">
+          <mxGeometry height="650" width="500" x="620" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-16" parent="VK7OkRAiDbiQK78nzlrD-15" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="MPI_Init&lt;div&gt;(pridobi rank in size)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="145" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-17" parent="VK7OkRAiDbiQK78nzlrD-15" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="Čaka na podatke od rank 0" vertex="1">
+          <mxGeometry height="60" width="280" x="105" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-18" parent="VK7OkRAiDbiQK78nzlrD-15" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="MPI_Bcast&lt;div&gt;(prejme širino, višino, število frame-ov)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="280" x="105" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-19" parent="VK7OkRAiDbiQK78nzlrD-15" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="MPI_Scatterv&lt;div&gt;(prejme svoj del frame-ov)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="280" x="105" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-20" parent="VK7OkRAiDbiQK78nzlrD-15" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="Obdelava lokalnih frame-ov&lt;div&gt;(GaussianBlur, sivinska slika, sobel operacija)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="320" x="85" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-21" edge="1" parent="VK7OkRAiDbiQK78nzlrD-15" source="VK7OkRAiDbiQK78nzlrD-16" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-22" edge="1" parent="VK7OkRAiDbiQK78nzlrD-15" source="VK7OkRAiDbiQK78nzlrD-17" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-23" edge="1" parent="VK7OkRAiDbiQK78nzlrD-15" source="VK7OkRAiDbiQK78nzlrD-18" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-24" edge="1" parent="VK7OkRAiDbiQK78nzlrD-15" source="VK7OkRAiDbiQK78nzlrD-19" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-25" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;align=center;" value="Algoritemski diagram: paralelna obdelava videa z MPI in Sobelovim operatorjem" vertex="1">
+          <mxGeometry height="40" width="850" x="170" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" value="MPI_Gatherv&lt;div&gt;(vsi procesi pošljejo obdelane frame-e nazaj na rank 0)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="520" x="330" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="Rank 0 sestavi rezultate v pravilnem vrstnem redu in predvaja izhodni video" vertex="1">
+          <mxGeometry height="60" width="520" x="330" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-28" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" value="MPI_Finalize in konec" vertex="1">
+          <mxGeometry height="50" width="180" x="500" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-29" edge="1" parent="1" source="VK7OkRAiDbiQK78nzlrD-6" style="endArrow=block;html=1;dashed=1;strokeColor=#d6b656;fontStyle=1;" target="VK7OkRAiDbiQK78nzlrD-18" value="meta podatki">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-30" edge="1" parent="1" source="VK7OkRAiDbiQK78nzlrD-7" style="endArrow=block;html=1;dashed=1;strokeColor=#d6b656;fontStyle=1;" target="VK7OkRAiDbiQK78nzlrD-19" value="deli videa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-31" edge="1" parent="1" source="VK7OkRAiDbiQK78nzlrD-8" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-32" edge="1" parent="1" source="VK7OkRAiDbiQK78nzlrD-20" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-33" edge="1" parent="1" source="VK7OkRAiDbiQK78nzlrD-26" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VK7OkRAiDbiQK78nzlrD-34" edge="1" parent="1" source="VK7OkRAiDbiQK78nzlrD-27" style="endArrow=block;html=1;rounded=0;" target="VK7OkRAiDbiQK78nzlrD-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
