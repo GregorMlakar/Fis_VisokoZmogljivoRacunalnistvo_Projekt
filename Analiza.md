@@ -1,5 +1,9 @@
 # Paralelna obdelava videa z uporabo MPI in OpenCV: </br></br> Pretvorba video sličic v sivinsko obliko in detekcija robov s Sobelovim operatorjem
 
+## Algoritemski diagram
+[Draw.io diagram](./Drawio)
+<img width="1081" height="971" alt="image" src="./Slike/Algoritemski diagram_ paralelna obdelava videa z MPI in Sobelovim operatorjem.drawio.png" />
+
 ## 1.	Analizo zmogljivosti: Meritve časa na 1, 2, 4, 8... jedrih (povprečje treh zagonov).
 
 Program zaženemo 3x za vsako število procesov:
