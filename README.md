@@ -27,6 +27,7 @@ Primer delitve pri 4 procesih:
 - rank 3 obdela četrti del sličic.
 
 ## Algoritemski diagram
+[Draw.io diagram](./Drawio)
 <img width="1081" height="971" alt="image" src="./Slike/Algoritemski diagram_ paralelna obdelava videa z MPI in Sobelovim operatorjem.drawio.png" />
 
 ## Izvorna koda
